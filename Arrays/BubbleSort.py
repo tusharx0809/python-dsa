@@ -1,7 +1,7 @@
 """Bubble sort"""
 
 def bubbleSort(arr: list[int]) -> None:
-    size = len(arr)
+    size: int = len(arr)
     for i in range(0, size):
         swapped = False
         for j in range(0,size-i-1):
@@ -14,7 +14,7 @@ def bubbleSort(arr: list[int]) -> None:
 
 
 def main():
-    arr = [5,1,6,2,3,8,7,9,0]
+    arr: list[int] = [5,1,6,2,3,8,7,9,0]
     bubbleSort(arr)
 
     print(arr)

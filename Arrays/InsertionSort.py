@@ -1,7 +1,7 @@
 """Insertion Sort"""
 
 def insertionSort(arr: list[int]) -> None:
-    size = len(arr)
+    size: int = len(arr)
     for i in range(1,size):
         key = arr[i]
         j = i-1
@@ -15,7 +15,7 @@ def insertionSort(arr: list[int]) -> None:
 
 
 def main():
-    arr = [5,1,6,2,3,8,7,9,0]
+    arr: list[int] = [5,1,6,2,3,8,7,9,0]
     insertionSort(arr)
     print(arr)
 

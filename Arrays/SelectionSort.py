@@ -1,9 +1,9 @@
 """Selection Sort"""
 
 def selectionSort(arr: list[int]) -> None:
-    size = len(arr)
+    size: int = len(arr)
     for i in range(0,size):
-        min_idx = i
+        min_idx: int = i
         for j in range(i+1, size):
             if arr[j] < arr[min_idx]:
                 min_idx = j
@@ -12,7 +12,7 @@ def selectionSort(arr: list[int]) -> None:
 
 
 def main():
-    arr = [5,1,6,2,3,8,7,9,0]
+    arr: list[int] = [5,1,6,2,3,8,7,9,0]
     selectionSort(arr)
     print(arr)
 
