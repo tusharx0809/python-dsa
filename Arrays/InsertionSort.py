@@ -12,6 +12,12 @@ def insertionSort(arr: list[int]) -> None:
         if j != i-1:
             arr[j+1] = key
 
-arr = [5,1,6,2,3,8,7,9,0]
-insertionSort(arr)
-print(arr)
+
+
+def main():
+    arr = [5,1,6,2,3,8,7,9,0]
+    insertionSort(arr)
+    print(arr)
+
+if __name__ == "__main__":
+    main()

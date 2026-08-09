@@ -10,6 +10,11 @@ def selectionSort(arr: list[int]) -> None:
         if min_idx != i:
             arr[min_idx], arr[i] = arr[i], arr[min_idx]
 
-arr = [5,1,6,2,3,8,7,9,0]
-selectionSort(arr)
-print(arr)
+
+def main():
+    arr = [5,1,6,2,3,8,7,9,0]
+    selectionSort(arr)
+    print(arr)
+
+if __name__ == "__main__":
+    main()
