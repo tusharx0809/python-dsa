@@ -30,6 +30,54 @@ class LinkedList:
         new_node.prev = temp
         temp.next = new_node
 
+    def insertAtPosition(self, val, pos):
+        new_node = Node(val)
+        if pos == 1:
+            self.insertAtBeginning(val)
+
+        current_pos = 1
+        temp = self.head
+        while current_pos < pos-1:
+            temp = temp.next
+            current_pos += 1
+
+        new_node.next = temp.next
+        new_node.prev = temp
+        temp.next.next.prev = new_node
+        temp.next = new_node
+
+    def deleteFromBeginning(self):
+        if self.head is None:
+            return
+
+        self.head = self.head.next
+        self.head.prev = None
+
+    def deleteFromEnd(self):
+        if self.head is None:
+            return
+
+        temp = self.head
+
+        while temp.next:
+            temp = temp.next
+
+        temp.prev.next = None
+        temp.prev = None
+
+    def deleteFromPosition(self,pos):
+        if self.head is None:
+            return
+
+        current_pos = 1
+        temp = self.head
+        while current_pos < pos - 1:
+            temp = temp.next
+            current_pos += 1
+
+        temp.next.prev = temp
+        temp.next = temp.next.next
+
     def printList(self):
         temp = self.head
         if temp is None:
@@ -50,6 +98,17 @@ def main():
     linked_list.insertAtEnd(10)
     linked_list.printList()
 
+    linked_list.insertAtPosition(12,3)
+    linked_list.printList()
+
+    linked_list.deleteFromBeginning()
+    linked_list.printList()
+
+    linked_list.deleteFromEnd()
+    linked_list.printList()
+
+    linked_list.deleteFromPosition(3)
+    linked_list.printList()
 if __name__ == "__main__":
     main()
         
